@@ -17,7 +17,7 @@ cursor = connection.cursor()
 
 # Insert data from the DataFrame into the MySQL table
 for index, row in df.iterrows():
-    sql = "INSERT INTO personal (nombre_completo, funsion, turno) VALUES (%s, %s, %s)"
+    sql = "INSERT INTO personal (matricula, nombre, apellido_paterno, apellido_materno, curp, grado, grupo, sexo, edad, correo, turno, incidencias, incidencias_graves, incidencias_muy_graves) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s,%s,%s,%s,%s)"
     cursor.execute(sql, tuple(row))
     print(index)
 
